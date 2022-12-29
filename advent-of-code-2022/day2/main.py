@@ -36,9 +36,6 @@ def get_score(input_string):
     return results_dict[input_string[0]][input_string[2]] + shape_scores[input_string[2]]
 
 
-print(sum(list(map(get_score, input_string[0:len(input_string) - 1]))))
-
-
 result_scores_by_strategy = {
     'X': 0,
     'Y': 3,
@@ -80,4 +77,8 @@ shape_scores_2 = {
     'C': 3,
 }
 
-print(sum(list(map(get_score_2, input_string[0:len(input_string) - 1]))))
+if __name__ == '__main__':
+    print(sum(list(map(get_score, input_string[0:len(input_string) - 1]))))
+    print(sum(list(map(get_score_2, input_string[0:len(input_string) - 1]))))
+
+
