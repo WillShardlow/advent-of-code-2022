@@ -1,5 +1,5 @@
 with open("input.txt") as f:
-    input = [x.strip() for x in f.readlines()]
+    input_string = [x.strip() for x in f.readlines()]
 
 
 def get_repeated_item(rucksack):
@@ -20,9 +20,9 @@ for i in range(97, 97 + 26):
 for i in range(65, 65 + 26):
     priorities_by_item[chr(i)] = i - 64 + 26
 
-priorities = [priorities_by_item[get_repeated_item(rucksack)] for rucksack in input]
+priorities = [priorities_by_item[get_repeated_item(rucksack)] for rucksack in input_string]
 
-list_of_groups_rucksacks = [[input[3*i], input[3*i+1], input[3*i+2]] for i in range(int(len(input) / 3))]
+list_of_groups_rucksacks = [[input_string[3 * i], input_string[3 * i + 1], input_string[3 * i + 2]] for i in range(int(len(input_string) / 3))]
 
 priorities_part_2 = [priorities_by_item[get_badge(rucksacks)] for rucksacks in list_of_groups_rucksacks]
 
